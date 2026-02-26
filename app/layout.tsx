@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Prachinburi City",
   description: "Digital portal for Prachinburi residents",
+  verification: {
+    google: "IipJ6P566r8jze0FhLfT2Y4YMQowyynKJJBYwIWSTeY",
+  },
 };
 
 export default function RootLayout({
