@@ -1,106 +1,130 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'Prachinburi City | เที่ยว ไอที งานอุตสาหกรรม และที่พักปราจีนบุรี',
-  description: 'พอร์ทัลรวมข้อมูลปราจีนบุรี: ที่เที่ยว, ไอที, นิคมอุตสาหกรรม, ประกาศหางาน และรวมหอพัก คอนโด บ้านเช่าในปราจีนบุรี ล่าสุด',
-  keywords: ['ปราจีนบุรี', 'ที่เที่ยวปราจีนบุรี', 'ไอทีปราจีนบุรี', 'Prachinburi City', 'อุตสาหกรรมปราจีน', 'หางานปราจีน', 'หอพักปราจีนบุรี', 'คอนโดปราจีนบุรี', 'บ้านเช่าปราจีนบุรี'],
+  title: 'ปราจีนบุรี 2026 | ที่เที่ยว ร้านอาหาร หางาน และที่พัก | Prachinburi City',
+  description:
+    'Local Lifestyle Portal จังหวัดปราจีนบุรี รวมงาน ที่พัก ร้านอาหาร คาเฟ่ และข้อมูลสำคัญในเมือง',
 }
 
 export default function Home() {
   const categories = [
-    { title: 'ที่เที่ยวปราจีนบุรี', desc: 'ธรรมชาติ น้ำตก และวัดดัง', icon: '🌲', color: 'hover:border-green-500/50 group-hover:bg-green-500/10', href: '/locations' },
-    { title: 'ไอทีปราจีนบุรี', desc: 'เทคโนโลยี และคอร์สเรียน IT', icon: '💻', color: 'hover:border-blue-500/50 group-hover:bg-blue-500/10', href: '/it-hub' },
-    { title: 'อุตสาหกรรมปราจีน', desc: 'ข้อมูลนิคมและโรงงานในพื้นที่', icon: '🏭', color: 'hover:border-orange-500/50 group-hover:bg-orange-500/10', href: '/locations' },
-    { title: 'หางานปราจีน', desc: 'อัปเดตตำแหน่งงานว่างล่าสุด', icon: '🔍', color: 'hover:border-red-500/50 group-hover:bg-red-500/10', href: '/jobs' },
-    { title: 'ที่พัก & อสังหาฯ', desc: 'หอพัก คอนโด และบ้านเช่า', icon: '🏢', color: 'hover:border-purple-500/50 group-hover:bg-purple-500/10', href: '/housing' },
-    { title: 'ร้านอาหาร & คาเฟ่', desc: 'รวมพิกัดของอร่อยเมืองปราจีน', icon: '☕', color: 'hover:border-yellow-500/50 group-hover:bg-yellow-500/10', href: '/food' },
+    { title: 'หางานปราจีนบุรี', desc: 'ตำแหน่งงานล่าสุดในนิคม 304 และโรจนะ', icon: '🔍', href: '/jobs' },
+    { title: 'ที่พัก & อสังหาฯ', desc: 'หอพัก คอนโด บ้านเช่า ใกล้นิคม', icon: '🏢', href: '/housing' },
+    { title: 'ร้านอาหาร & คาเฟ่', desc: 'พิกัดของอร่อยทั่วเมือง', icon: '☕', href: '/food' },
+    { title: 'ที่เที่ยวธรรมชาติ', desc: 'น้ำตก วัดดัง จุดเช็คอิน', icon: '🌲', href: '/locations' },
+    { title: 'อุตสาหกรรม', desc: 'ข้อมูลนิคมและโรงงาน', icon: '🏭', href: '/locations' },
+    { title: 'IT & Services', desc: 'บริการเทคโนโลยีในพื้นที่', icon: '💻', href: '/it-hub' },
   ]
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-blue-500/30">
-      {/* Hero Section */}
-      <section className="relative py-24 px-4 flex flex-col items-center text-center overflow-hidden">
-        {/* Animated Background Orbs */}
-        <div className="absolute top-0 -left-20 w-72 h-72 bg-blue-600/10 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-0 -right-20 w-72 h-72 bg-purple-600/10 blur-[120px] rounded-full animate-pulse delay-700" />
-        <div className="absolute top-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent z-0" />
-        
-        <div className="relative z-10 max-w-4xl">
-          <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-6 tracking-widest uppercase">
-            Digital Portal for Local Residents
-          </span>
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-none">
-            PRACHINBURI <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">CITY</span>
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 text-slate-800">
+
+
+
+      {/* ================= HERO ================= */}
+      <section className="relative py-28 px-4 text-center overflow-hidden">
+
+        {/* Soft background glow */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200 blur-[140px] rounded-full opacity-40" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-200 blur-[140px] rounded-full opacity-40" />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="sr-only">
+            ปราจีนบุรี | Local Lifestyle Portal | Prachinburi City
           </h1>
-          <p className="text-xl md:text-2xl text-slate-400 mb-10 leading-relaxed font-light max-w-2xl mx-auto">
-            เข้าถึงทุกโอกาสและข้อมูลสำคัญใน <span className="text-slate-200 font-medium">เมืองปราจีนบุรี</span> ครบจบในที่เดียว
+
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-slate-900">
+            เมืองปราจีนบุรี
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+              Lifestyle Portal
+            </span>
+          </h2>
+
+          <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+            ศูนย์รวมข้อมูลการใช้ชีวิตในจังหวัดปราจีนบุรี
+            งาน ที่พัก ร้านอาหาร และโอกาสใหม่ ๆ สำหรับคนท้องถิ่นและคนทำงานนิคม
           </p>
-          
-          <div className="flex flex-wrap gap-4 justify-center">
-             <Link href="/jobs" className="px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-xl shadow-blue-500/20 hover:scale-105 active:scale-95">
-                หาตำแหน่งงาน
-             </Link>
-             <Link href="/housing" className="px-10 py-4 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-white font-bold rounded-2xl transition-all hover:scale-105 active:scale-95">
-                ดูหอพัก/คอนโด
-             </Link>
+
+          {/* Search Bar */}
+          <div className="max-w-xl mx-auto flex shadow-lg rounded-2xl overflow-hidden border border-blue-100">
+            <input
+              type="text"
+              placeholder="ค้นหางาน ร้านอาหาร หรือสถานที่..."
+              className="flex-1 px-5 py-4 bg-white focus:outline-none"
+            />
+            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold transition">
+              ค้นหา
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-12 grid grid-cols-3 gap-6 text-center">
+            <div>
+              <p className="text-2xl font-bold text-blue-600">150+</p>
+              <p className="text-sm text-slate-500">ตำแหน่งงาน</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-blue-600">320+</p>
+              <p className="text-sm text-slate-500">ร้านอาหาร</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-blue-600">85+</p>
+              <p className="text-sm text-slate-500">ที่พัก</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Category Grid */}
-      <section className="max-w-6xl mx-auto px-4 py-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* ================= CATEGORY GRID ================= */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <h3 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+          สำรวจหมวดหมู่
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((item, idx) => (
-            <Link href={item.href} key={idx} className="group">
-              <div 
-                className={`h-full bg-slate-900/30 backdrop-blur-md border border-slate-800 p-8 rounded-[2.5rem] transition-all duration-300 ${item.color} group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:shadow-black/50 active:scale-95`}
-              >
-                <div className="text-5xl mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 origin-left">
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-slate-500 text-base leading-relaxed group-hover:text-slate-400 transition-colors">
-                  {item.desc}
-                </p>
-                <div className="mt-6 flex items-center text-sm font-bold text-blue-500/0 group-hover:text-blue-500 transition-all duration-300 uppercase tracking-widest">
-                  Explore More <span className="ml-2">→</span>
-                </div>
+            <Link href={item.href} key={idx}>
+              <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all hover:-translate-y-2 border border-blue-100">
+                <div className="text-4xl mb-5">{item.icon}</div>
+                <h4 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h4>
+                <p className="text-slate-600 text-sm">{item.desc}</p>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Trust Section / SEO Text */}
-      <section className="max-w-5xl mx-auto px-6 py-32 text-center relative">
-        <div className="absolute inset-0 flex items-center justify-center opacity-5">
-            <h2 className="text-[12rem] font-black select-none uppercase">PRACHIN</h2>
-        </div>
-        <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">เชื่อมต่อทุกโอกาสในปราจีนบุรี</h2>
-            <p className="text-lg md:text-xl text-slate-500 leading-relaxed italic max-w-3xl mx-auto">
-              "ไม่ว่าคุณจะเป็นคนในพื้นที่ หรือกำลังย้ายมาทำงานที่นิคมอุตสาหกรรม <span className="text-blue-500/80 not-italic font-bold">โรจนะ, 304 หรือกบินทร์บุรี</span> 
-              เราพร้อมเป็นสื่อกลางในการค้นหาที่พักที่ถูกใจ งานที่ใช่ และไลฟ์สไตล์ที่ลงตัว"
-            </p>
+      {/* ================= LATEST ================= */}
+      <section className="bg-white py-20 border-t border-blue-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-3xl font-bold text-slate-900 mb-10">
+            อัปเดตล่าสุดในเมือง
+          </h3>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-blue-50 p-6 rounded-2xl">
+              <p className="text-sm text-blue-600 mb-2 font-semibold">งานใหม่</p>
+              <p className="font-bold text-slate-800">บริษัทนิคม 304 รับสมัครเพิ่ม 20 ตำแหน่ง</p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-2xl">
+              <p className="text-sm text-blue-600 mb-2 font-semibold">ห้องพักใหม่</p>
+              <p className="font-bold text-slate-800">หอพักเปิดใหม่ ใกล้โรจนะ เริ่มต้น 3,000 บาท</p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-2xl">
+              <p className="text-sm text-blue-600 mb-2 font-semibold">ร้านเปิดใหม่</p>
+              <p className="font-bold text-slate-800">คาเฟ่เปิดใหม่ กบินทร์บุรี</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer className="py-16 text-center border-t border-slate-900 bg-slate-950/50 backdrop-blur-sm">
-        <div className="flex justify-center gap-8 mb-8 text-slate-500 uppercase text-xs font-bold tracking-[0.2em]">
-            <Link href="/jobs" className="hover:text-white transition-colors">Jobs</Link>
-            <Link href="/housing" className="hover:text-white transition-colors">Housing</Link>
-            <Link href="/locations" className="hover:text-white transition-colors">Tourism</Link>
-        </div>
-        <p className="text-slate-600 text-sm italic">© 2026 Prachinburi City Digital Portal. All rights reserved.</p>
-        <div className="mt-4 flex justify-center items-center gap-2">
-            <div className="h-[1px] w-8 bg-slate-800" />
-            <p className="text-slate-700 font-mono text-[10px]">Built with Next.js 15 • Supabase • Tailwind</p>
-            <div className="h-[1px] w-8 bg-slate-800" />
-        </div>
-      </footer>
+      {/* ================= FOOTER ================= */}
+
+
     </main>
   )
 }
