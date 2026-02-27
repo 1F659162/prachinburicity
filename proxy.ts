@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (process.env.MAINTENANCE_MODE === "true") {
     return new NextResponse(
       `
@@ -21,12 +21,12 @@ export function middleware(request: NextRequest) {
       {
         status: 503,
         headers: {
-          "content-type": "text/html; charset= utf-8",
+          "content-type": "text/html; charset=utf-8",
           "Retry-After": "3600",
         },
       }
-    )
+    );
   }
 
-  return NextResponse.next()
+  return NextResponse.next();
 }
